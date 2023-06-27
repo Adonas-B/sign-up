@@ -31,7 +31,7 @@ export const CheckboxCard = forwardRef<Ref, CheckboxCardProps>(({ ...props }, re
 			px={5}
 			py={3}
 			minWidth={150}
-			minHeight={150}	
+			minHeight={{ base: '40px', sm: '150'}}
 			display={'flex'}
 			alignItems={'center'}
 			justifyContent={'center'}
@@ -50,8 +50,7 @@ CheckboxCard.displayName = 'CheckboxCard'
 export const CustomCheckboxGroup = forwardRef<Ref, Props>(({ control, name, options, ...props }, ref) => {
 	const { field } = useController({
 		name,
-		control,
-		// defaultValue
+		control
 	});
 
 	const { getCheckboxProps } = useCheckboxGroup({
@@ -59,7 +58,7 @@ export const CustomCheckboxGroup = forwardRef<Ref, Props>(({ control, name, opti
 	});
 
 	return (
-		<SimpleGrid minChildWidth={'150px'} spacing={8} justifyContent={"center"}>
+		<SimpleGrid minChildWidth={'150px'} spacing={{ base: '2', sm: '8'}} justifyContent={"center"}>
 			{options.map((value: string) => {
 				const checkbox = getCheckboxProps({ value })
 				return (

@@ -36,16 +36,13 @@ export default function Page() {
   })
 
   useEffect(() => {
-    const userPrefs = window.localStorage.getItem('userPrefs')
+    const userPrefs = window.sessionStorage.getItem('userPrefs')
     if (userPrefs !== null) {
       setUserPreferences(JSON.parse(userPrefs))
       reset()
     }
     setIsLoaded(true)
   }, [reset])
-
-  console.log('userPreferences', userPreferences?.personalisation)
-
 
   useEffect(() => {
     if (userPreferences) {
@@ -54,7 +51,7 @@ export default function Page() {
   }, [reset, userPreferences]);
 
   const onSubmit: SubmitHandler<SignUpFormValues> = data => {
-    window.localStorage.setItem('userPrefs', JSON.stringify(data))
+    window.sessionStorage.setItem('userPrefs', JSON.stringify(data))
     setUserPreferences(data)
     toast({
       title: 'Preferences Saved.',

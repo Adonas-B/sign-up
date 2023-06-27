@@ -42,7 +42,7 @@ export const RadioCard = forwardRef<Ref, RadioCardProps>(({ children, ...props }
 				px={5}
 				py={3}
 				minWidth={150}
-				minHeight={150}
+				minHeight={{ base: '40px', sm: '150'}}
 				display={'flex'}
 				alignItems={'center'}
 				justifyContent={'center'}
@@ -67,7 +67,7 @@ export const CustomRadioGroup = forwardRef<Ref, Props>(({ control, name, default
 	});
 
 	return (
-		<SimpleGrid minChildWidth={'150px'} spacing={8} justifyContent={"center"}  {...getRootProps()}>
+		<SimpleGrid minChildWidth={'150px'} spacing={{ base: '2', sm: '8'}} justifyContent={"center"}  {...getRootProps()}>
 			{options.map((value: string) => {
 				const radio = getRadioProps({ value })
 				return (

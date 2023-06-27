@@ -25,4 +25,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 Consists of a Home Page and Sign Up Page.
 
-Sign Up Page has a form which saves to local storage so data persists on refresh. Hard Reload or Clear Cache to reset form.
+Sign Up Page has a form which saves to local storage so data persists on refresh. Clear Cache or open in new tab to reset form.
